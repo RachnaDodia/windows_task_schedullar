@@ -1,0 +1,23 @@
+---
+- name: Create MySQL Table
+  hosts: all
+  become: yes
+  vars:
+    mysql_db_name: BALIC_POC
+    mysql_script_name: "mysql_script.sql"
+    mysql_validatation_query: "SELECT COUNT(*) FROM balic_table;"
+    rows_affected: 2
+  vars_files:
+    - db_credentials.yml
+  pre_tasks:
+    - name: Install pip
+      yum:
+        name: pip
+        state: present
+    - name: Install mysql client
+      pip:
+        name: pymysql
+        state: present  
+  tasks:
+    - name: DB - {{ mysql_db_name }} creation Task
+      mysql_db:
