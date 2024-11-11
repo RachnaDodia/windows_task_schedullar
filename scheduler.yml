@@ -7,5 +7,4 @@
       register: jobs
     - name: Display Job Details
       ansible.builtin.debug:
-        var: jobs
-        verbosity: 2
+        msg: "{{ jobs.stdout }}"
