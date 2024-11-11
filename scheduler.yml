@@ -1,6 +1,6 @@
 ---
 - name: Enable and start job
-  hosts: all
+  hosts: student1-win1
   tasks:
     - name: Get all the schedulled tasks 
       win_shell: Get-ScheduledTask
