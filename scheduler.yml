@@ -6,5 +6,6 @@
       win_shell: Get-ScheduledTask
       register: jobs
     - name: Display Job Details
-      ansible.builtin.debug: jobs
-      verbosity: 2
+      ansible.builtin.debug:
+        var: jobs
+        verbosity: 2
