@@ -2,5 +2,9 @@
 - name: Enable and start job
   hosts: student1-win1
   tasks:
-    - name: Get all the schedulled tasks 
+    - name: Capture all the tasks details
       win_shell: Get-ScheduledTask
+      register: jobs
+    - name: Display Job Details
+      ansible.builtin.debug: jobs
+      verbosity: 2
