@@ -1,5 +1,5 @@
 ---
-- name: Enable and start job
+- name: Capture Job Report
   hosts: student1-win1
   tasks:
     - name: Capture all the tasks details
