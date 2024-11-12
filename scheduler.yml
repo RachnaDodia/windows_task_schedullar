@@ -8,3 +8,7 @@
     - name: Display Job Details
       ansible.builtin.debug:
         msg: "{{ jobs.stdout }}"
+    - name: Capture O/P in a file
+      ansible.builtin.copy:        
+        content: "{{ jobs.stdout }}"
+        dest: "/home/student1/windows"
