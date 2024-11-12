@@ -1,0 +1,7 @@
+---
+- name: Enable the schedulled job
+  hosts: student1-win1
+  gather_facts: false
+  tasks:
+    - name: Enable and start the job
+      win_shell: Enable-ScheduledTask -TaskName "{{ taskname }}" -TaskPath "{{ taskpath }}"
