@@ -1,6 +1,7 @@
 ---
 - name: Capture Job Report
   hosts: all
+  gather_facts: false
   tasks:
     - name: Capture all the tasks details
       win_shell: Get-ScheduledTask
@@ -14,4 +15,4 @@
       ansible.builtin.copy:        
         content: "{{ jobs.stdout }}"
         dest: "/home/student1/windows"
-      delegate_to: student1-ansible-1
+      delegate_to: localhost
