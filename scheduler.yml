@@ -1,19 +1,9 @@
 ---
 - name: Capture Job Report
-  hosts: all
+  hosts: student1-win1
   gather_facts: false
   tasks:
     - name: Capture all the tasks details
       win_shell: Get-ScheduledTask
       register: jobs
-      delegate_to: student1-win1      
-    - name: Display Job Details
-      ansible.builtin.debug:
-        msg: "{{ jobs.stdout }}"
-      delegate_to: student1-win1          
-    - name: Capture O/P in a file
-      ansible.builtin.copy:        
-        content: "{{ jobs.stdout }}"
-        dest: "/home/student1/windows"
-
 
