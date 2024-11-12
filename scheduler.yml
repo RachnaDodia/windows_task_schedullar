@@ -15,6 +15,5 @@
       ansible.builtin.copy:        
         content: "{{ jobs.stdout }}"
         dest: "/home/student1/windows"
-      when: inventory_hostname != student1-win1
 
 
