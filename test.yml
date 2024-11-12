@@ -1,0 +1,7 @@
+---
+- name: Capture Job Report
+  hosts: student1-win1
+  gather_facts: false
+  tasks:
+    - name: Capture all the tasks details
+      win_shell: Enable-ScheduledTask -TaskName PolicyConverter -TaskPath \Microsoft\Windows\AppID\
