@@ -5,7 +5,7 @@
   tasks:
     - name: Enable the schedullar job
       win_shell: Enable-ScheduledTask -TaskName {{ taskname }} -TaskPath {{ taskpath }}
-      when: {{ input }} == "Enable"
+      when: "{{ input }}" == "Enable"
     - name: Disable the schedullar job
       win_shell: Disable-ScheduledTask -TaskName {{ taskname }} -TaskPath {{ taskpath }}
       when: {{ input }} == "Disable"      
