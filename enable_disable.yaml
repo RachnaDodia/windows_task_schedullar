@@ -8,4 +8,4 @@
       when: input == "Enable"
     - name: Disable the schedullar job
       win_shell: Disable-ScheduledTask -TaskName {{ taskname }} -TaskPath {{ taskpath }}
-      when: {{ input }} == "Disable"      
+      when: input == "Disable"      
